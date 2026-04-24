@@ -37,7 +37,7 @@ const engineeringServices = {
   title: 'Engenharia de Segurança',
   description: 'Infraestrutura completa e profissionais habilitados com grande experiência em engenharia e segurança do trabalho, de forma a atender plenamente as necessidades da sua empresa.',
   details: [
-    'PPRA - Programa de Prevenção de Risco Ambientais',
+    'PPRA - Programa de Prevenção de Riscos Ambientais',
     'CIPA - Comissão Interna de Prevenção de Acidentes - Implantação e Treinamento',
     'EPI - Catálogo de EPI, elaboração, Treinamento e implantação',
     'PPP - Perfil Profissiográfico Previdenciário',
