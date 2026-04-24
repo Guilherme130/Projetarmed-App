@@ -6,17 +6,17 @@ import { MapPin, Clock, Phone, Mail, ExternalLink } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Contato',
-  description: 'Entre em contato com a Projetarmed - localizacao, telefones e horario de funcionamento.',
+  description: 'Entre em contato com a Projetarmed - localização, telefones e horário de funcionamento.',
 }
 
 const contactInfo = {
   address: {
     street: 'Rua Emereciana Pedro da Silva, 210',
-    neighborhood: 'Jardim Teresopolis - Betim/MG',
+    neighborhood: 'Jardim Teresópolis - Betim/MG',
     cep: '32681-350',
     mapsUrl: 'https://maps.app.goo.gl/KM122xS4uGU2gqyz5',
   },
-  hours: 'Segunda a Sexta - 7:00 as 17:00',
+  hours: 'Segunda à Sexta - 7:00 às 17:00',
   phones: [
     { number: '(31) 9 9767-9401', type: 'WhatsApp' },
     { number: '(31) 3594-8278', type: 'Telefone' },
@@ -36,7 +36,7 @@ export default function ContatoPage() {
             Nossos Contatos
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-primary-foreground/80">
-            Estamos prontos para atender voce
+            Estamos prontos para atender você
           </p>
         </div>
       </section>
@@ -54,7 +54,7 @@ export default function ContatoPage() {
               />
             </div>
             <div className="space-y-6">
-              {/* Localizacao */}
+              {/* Localização */}
               <Card>
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
@@ -62,7 +62,7 @@ export default function ContatoPage() {
                       <MapPin className="h-6 w-6" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-foreground">Localizacao</h3>
+                      <h3 className="text-lg font-semibold text-foreground">Localização</h3>
                       <p className="mt-2 text-muted-foreground">
                         {contactInfo.address.street}<br />
                         {contactInfo.address.neighborhood}<br />
@@ -82,7 +82,7 @@ export default function ContatoPage() {
                 </CardContent>
               </Card>
 
-              {/* Horario */}
+              {/* Horário */}
               <Card>
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
@@ -90,7 +90,7 @@ export default function ContatoPage() {
                       <Clock className="h-6 w-6" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-foreground">Horario de Funcionamento</h3>
+                      <h3 className="text-lg font-semibold text-foreground">Horário de Funcionamento</h3>
                       <p className="mt-2 text-muted-foreground">
                         {contactInfo.hours}
                       </p>
@@ -155,7 +155,7 @@ export default function ContatoPage() {
             Prefere falar pelo WhatsApp?
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-accent-foreground/90">
-            Envie uma mensagem agora mesmo e nossa equipe respondera o mais rapido possivel.
+            Envie uma mensagem agora mesmo e nossa equipe responderá o mais rápido possível.
           </p>
           <a
             href="https://api.whatsapp.com/send?phone=5531997679401"
@@ -174,7 +174,7 @@ export default function ContatoPage() {
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Nossa Localizacao</h2>
+            <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Nossa Localização</h2>
             <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
               Estamos localizados em Betim, Minas Gerais. Venha nos visitar!
             </p>
@@ -188,7 +188,7 @@ export default function ContatoPage() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Localizacao Projetarmed"
+              title="Localização Projetarmed"
               className="rounded-xl"
             />
           </div>

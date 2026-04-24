@@ -88,8 +88,9 @@ export function Navbar() {
             href="https://api.whatsapp.com/send?phone=5531997679401"
             target="_blank"
             rel="noopener noreferrer"
+            className="cursor-pointer"
           >
-            <Button size="sm" className="ml-2 bg-accent hover:bg-accent/90">
+            <Button size="sm" className="ml-2 cursor-pointer bg-accent hover:bg-accent/90">
               WhatsApp
             </Button>
           </a>

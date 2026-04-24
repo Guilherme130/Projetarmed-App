@@ -121,25 +121,23 @@ export function Footer() {
         {/* Empresas do Grupo */}
         <div className="mt-12 border-t border-primary-foreground/20 pt-8">
           <h3 className="mb-6 text-center text-lg font-semibold">Outras Empresas do Grupo</h3>
-          <div className="flex flex-wrap items-center justify-center gap-8">
+          <div className="flex flex-wrap items-center justify-center gap-12">
             {groupCompanies.map((company) => (
               <a
                 key={company.name}
                 href={company.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col items-center gap-2 transition-opacity hover:opacity-80"
+                className="group flex flex-col items-center gap-3 transition-transform hover:scale-105"
               >
-                <div className="flex h-20 w-32 items-center justify-center rounded-lg bg-white/10 p-3 backdrop-blur transition-colors group-hover:bg-white/20">
-                  <Image
-                    src={company.logo}
-                    alt={company.name}
-                    width={100}
-                    height={60}
-                    className="h-auto max-h-14 w-auto object-contain"
-                  />
-                </div>
-                <span className="text-xs text-primary-foreground/60">{company.description}</span>
+                <Image
+                  src={company.logo}
+                  alt={company.name}
+                  width={180}
+                  height={100}
+                  className="h-auto max-h-24 w-auto object-contain brightness-0 invert transition-opacity group-hover:opacity-80"
+                />
+                <span className="text-sm text-primary-foreground/70">{company.description}</span>
               </a>
             ))}
           </div>
