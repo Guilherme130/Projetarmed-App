@@ -132,7 +132,7 @@ export default function ContatoPage() {
                       <Mail className="h-6 w-6" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-foreground">Email</h3>
+                      <h3 className="text-lg font-semibold text-foreground">E-mail</h3>
                       <a
                         href={`mailto:${contactInfo.email}`}
                         className="mt-2 block text-muted-foreground hover:text-accent"
