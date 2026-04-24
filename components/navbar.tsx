@@ -1,0 +1,165 @@
+'use client'
+
+import { useState } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import { Menu, X, Instagram, Facebook, ExternalLink } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/sobre', label: 'Sobre Nós' },
+  { href: '/servicos', label: 'Serviços' },
+  { href: '/contato', label: 'Contato' },
+]
+
+const socialLinks = [
+  { 
+    href: 'https://www.instagram.com/projetarmed.betim/', 
+    label: 'Instagram', 
+    icon: Instagram 
+  },
+  { 
+    href: 'https://www.facebook.com/projetarmed', 
+    label: 'Facebook', 
+    icon: Facebook 
+  },
+]
+
+export function Navbar() {
+  const [isOpen, setIsOpen] = useState(false)
+
+  return (
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container mx-auto flex h-16 items-center justify-between px-4 lg:px-8">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2">
+          <Image
+            src="/images/projetarmed-logo.png"
+            alt="Projetarmed"
+            width={48}
+            height={48}
+            className="h-10 w-10 lg:h-12 lg:w-12"
+            priority
+          />
+          <span className="hidden text-xl font-bold text-primary sm:inline-block">
+            PROJETARMED
+          </span>
+        </Link>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden items-center gap-1 lg:flex">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+            >
+              {link.label}
+            </Link>
+          ))}
+          <a
+            href="https://sistema.soc.com.br/WebSoc/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+          >
+            Exames
+            <ExternalLink className="h-3 w-3" />
+          </a>
+        </nav>
+
+        {/* Desktop Social Links */}
+        <div className="hidden items-center gap-2 lg:flex">
+          {socialLinks.map((social) => (
+            <a
+              key={social.href}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={social.label}
+              className="flex h-9 w-9 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-secondary hover:text-primary"
+            >
+              <social.icon className="h-5 w-5" />
+            </a>
+          ))}
+          <a
+            href="https://api.whatsapp.com/send?phone=5531997679401"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button size="sm" className="ml-2 bg-accent hover:bg-accent/90">
+              WhatsApp
+            </Button>
+          </a>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <Button
+          variant="ghost"
+          size="icon"
+          className="lg:hidden"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
+        >
+          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </Button>
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        className={cn(
+          'overflow-hidden border-t border-border/40 bg-background transition-all duration-300 lg:hidden',
+          isOpen ? 'max-h-96' : 'max-h-0'
+        )}
+      >
+        <nav className="container mx-auto flex flex-col px-4 py-4">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setIsOpen(false)}
+              className="py-3 text-base font-medium text-foreground transition-colors hover:text-primary"
+            >
+              {link.label}
+            </Link>
+          ))}
+          <a
+            href="https://sistema.soc.com.br/WebSoc/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1 py-3 text-base font-medium text-foreground transition-colors hover:text-primary"
+          >
+            Exames
+            <ExternalLink className="h-4 w-4" />
+          </a>
+          <div className="mt-4 flex items-center gap-3 border-t border-border pt-4">
+            {socialLinks.map((social) => (
+              <a
+                key={social.href}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-muted-foreground transition-colors hover:text-primary"
+              >
+                <social.icon className="h-5 w-5" />
+              </a>
+            ))}
+            <a
+              href="https://api.whatsapp.com/send?phone=5531997679401"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-auto"
+            >
+              <Button className="bg-accent hover:bg-accent/90">
+                WhatsApp
+              </Button>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+  )
+}
