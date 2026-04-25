@@ -202,19 +202,32 @@ export default function HomePage() {
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
-              <Card
-                key={service.title}
-                className="group cursor-pointer border-border/50 transition-all hover:border-accent hover:shadow-lg"
-              >
-                <CardContent className="flex flex-col items-center p-8 text-center">
-                  <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
-                    <service.icon className="h-8 w-8" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-foreground">{service.title}</h3>
-                </CardContent>
-              </Card>
-            ))}
+            {services.map((service) => {
+              const isProjetarColetas = service.title === 'Projetar Coletas'
+              const href = isProjetarColetas
+                ? 'https://www.instagram.com/projetarcoletas/'
+                : '/servicos'
+              const isExternal = isProjetarColetas
+
+              return (
+                <Link
+                  key={service.title}
+                  href={href}
+                  target={isExternal ? '_blank' : undefined}
+                  rel={isExternal ? 'noopener noreferrer' : undefined}
+                  className="cursor-pointer"
+                >
+                  <Card className="group cursor-pointer border-border/50 transition-all hover:border-accent hover:shadow-lg">
+                    <CardContent className="flex flex-col items-center p-8 text-center">
+                      <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
+                        <service.icon className="h-8 w-8" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-foreground">{service.title}</h3>
+                    </CardContent>
+                  </Card>
+                </Link>
+              )
+            })}
           </div>
         </div>
       </section>
