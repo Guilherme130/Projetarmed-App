@@ -72,7 +72,7 @@ export default function ContatoPage() {
                         href={contactInfo.address.mapsUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-3 inline-flex items-center gap-1 text-sm text-accent hover:underline"
+                        className="cursor-pointer mt-3 inline-flex items-center gap-1 text-sm text-accent hover:underline"
                       >
                         Ver no Google Maps
                         <ExternalLink className="h-3 w-3" />
@@ -113,7 +113,7 @@ export default function ContatoPage() {
                           <a
                             key={phone.number}
                             href={`tel:${phone.number.replace(/\D/g, '')}`}
-                            className="block text-muted-foreground hover:text-accent"
+                            className="cursor-pointer block text-muted-foreground hover:text-accent"
                           >
                             {phone.number} <span className="text-xs text-muted-foreground/70">({phone.type})</span>
                           </a>
@@ -135,7 +135,7 @@ export default function ContatoPage() {
                       <h3 className="text-lg font-semibold text-foreground">E-mail</h3>
                       <a
                         href={`mailto:${contactInfo.email}`}
-                        className="mt-2 block text-muted-foreground hover:text-accent"
+                        className="cursor-pointer mt-2 block text-muted-foreground hover:text-accent"
                       >
                         {contactInfo.email}
                       </a>
@@ -161,9 +161,9 @@ export default function ContatoPage() {
             href="https://api.whatsapp.com/send?phone=5531997679401"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 inline-block"
+            className="cursor-pointer mt-8 inline-block"
           >
-            <Button size="lg" variant="secondary">
+            <Button size="lg" variant="secondary" className="cursor-pointer">
               Iniciar Conversa no WhatsApp
             </Button>
           </a>
