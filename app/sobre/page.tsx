@@ -136,13 +136,13 @@ export default function SobrePage() {
             Descubra como podemos ajudar sua empresa a manter seus colaboradores seguros e saudáveis.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link href="/servicos">
-              <Button size="lg" variant="secondary">
+            <Link href="/servicos" className="cursor-pointer">
+              <Button size="lg" variant="secondary" className="cursor-pointer">
                 Ver Serviços
               </Button>
             </Link>
-            <Link href="/contato">
-              <Button size="lg" variant="outline" className="border-white bg-white/10 text-white hover:bg-white/20">
+            <Link href="/contato" className="cursor-pointer">
+              <Button size="lg" variant="outline" className="cursor-pointer border-white bg-white/10 text-white hover:bg-white/20">
                 Entre em Contato
               </Button>
             </Link>

@@ -167,7 +167,7 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden">
+      <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden">
         <Image
           src="/images/hero-workers.png"
           alt="Trabalhadores da indústria olhando para o horizonte"
@@ -184,13 +184,13 @@ export default function HomePage() {
             Seu Colaborador Merece Ter Tratamento de Qualidade
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link href="/contato">
-              <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+            <Link href="/contato" className="cursor-pointer">
+              <Button size="lg" className="cursor-pointer bg-accent text-accent-foreground hover:bg-accent/90">
                 Entre em Contato
               </Button>
             </Link>
-            <Link href="/servicos">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+            <Link href="/servicos" className="cursor-pointer">
+              <Button size="lg" className="cursor-pointer bg-accent text-accent-foreground hover:bg-accent/90">
                 Nossos Serviços
               </Button>
             </Link>
@@ -202,19 +202,32 @@ export default function HomePage() {
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
-              <Card
-                key={service.title}
-                className="group cursor-pointer border-border/50 transition-all hover:border-accent hover:shadow-lg"
-              >
-                <CardContent className="flex flex-col items-center p-8 text-center">
-                  <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
-                    <service.icon className="h-8 w-8" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-foreground">{service.title}</h3>
-                </CardContent>
-              </Card>
-            ))}
+            {services.map((service) => {
+              const isProjetarColetas = service.title === 'Projetar Coletas'
+              const href = isProjetarColetas
+                ? 'https://www.instagram.com/projetarcoletas/'
+                : '/servicos'
+              const isExternal = isProjetarColetas
+
+              return (
+                <Link
+                  key={service.title}
+                  href={href}
+                  target={isExternal ? '_blank' : undefined}
+                  rel={isExternal ? 'noopener noreferrer' : undefined}
+                  className="cursor-pointer"
+                >
+                  <Card className="group cursor-pointer border-border/50 transition-all hover:border-accent hover:shadow-lg">
+                    <CardContent className="flex flex-col items-center p-8 text-center">
+                      <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
+                        <service.icon className="h-8 w-8" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-foreground">{service.title}</h3>
+                    </CardContent>
+                  </Card>
+                </Link>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -244,13 +257,13 @@ export default function HomePage() {
                   clientes que nos procuram.
                 </p>
               </div>
-              <Link href="/sobre" className="mt-6 inline-block">
-                <Button className="bg-primary hover:bg-primary/90">Saiba Mais</Button>
+              <Link href="/sobre" className="mt-6 inline-block cursor-pointer">
+                <Button className="cursor-pointer bg-primary hover:bg-primary/90">Saiba Mais</Button>
               </Link>
             </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+            <div className="relative aspect-[4/4] overflow-hidden rounded-xl">
               <Image
-                src="/images/worker-landscape.jpg"
+                src="/images/medico sorrindo.png"
                 alt="Profissional de segurança do trabalho"
                 fill
                 className="object-cover"
@@ -281,7 +294,7 @@ export default function HomePage() {
                 <Accordion type="single" collapsible className="w-full">
                   {specialties.map((item, index) => (
                     <AccordionItem key={index} value={`item-${index}`}>
-                      <AccordionTrigger className="hover:no-underline">
+                      <AccordionTrigger className="cursor-pointer hover:no-underline">
                         <div className="flex items-center gap-3 text-left">
                           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
                             <item.icon className="h-5 w-5" />
@@ -300,8 +313,8 @@ export default function HomePage() {
                             </li>
                           ))}
                         </ul>
-                        <Link href="/servicos" className="ml-13 mt-4 inline-block pl-13">
-                          <Button variant="outline" size="sm" className="text-accent hover:text-accent">
+                        <Link href="/servicos" className="ml-13 mt-4 inline-block cursor-pointer pl-13">
+                          <Button variant="outline" size="sm" className="cursor-pointer text-accent hover:text-accent">
                             Saiba Mais
                           </Button>
                         </Link>
@@ -330,13 +343,14 @@ export default function HomePage() {
               href="https://api.whatsapp.com/send?phone=5531997679401"
               target="_blank"
               rel="noopener noreferrer"
+              className="cursor-pointer"
             >
-              <Button size="lg" variant="secondary">
+              <Button size="lg" variant="secondary" className="cursor-pointer">
                 Fale pelo WhatsApp
               </Button>
             </a>
-            <Link href="/contato">
-              <Button size="lg" variant="outline" className="border-white bg-white/10 text-white hover:bg-white/20">
+            <Link href="/contato" className="cursor-pointer">
+              <Button size="lg" variant="secondary" className="cursor-pointer">
                 Ver Contatos
               </Button>
             </Link>

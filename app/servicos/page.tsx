@@ -85,7 +85,7 @@ export default function ServicosPage() {
           <div className="grid items-start gap-12 lg:grid-cols-2">
             <div className="relative aspect-[4/3] overflow-hidden rounded-xl lg:sticky lg:top-24">
               <Image
-                src="/images/worker-notes.jpeg"
+                src="/images/imagem-mulher-corredor.png"
                 alt="Profissional de saúde"
                 fill
                 className="object-cover"
@@ -104,7 +104,7 @@ export default function ServicosPage() {
               <div className="mt-8">
                 <Accordion type="single" collapsible defaultValue="item-0">
                   <AccordionItem value="item-0">
-                    <AccordionTrigger className="hover:no-underline">
+                    <AccordionTrigger className="cursor-pointer hover:no-underline">
                       <span className="font-medium">Ver todos os serviços de medicina</span>
                     </AccordionTrigger>
                     <AccordionContent>
@@ -144,7 +144,7 @@ export default function ServicosPage() {
               <div className="mt-8">
                 <Accordion type="single" collapsible defaultValue="item-0">
                   <AccordionItem value="item-0">
-                    <AccordionTrigger className="hover:no-underline">
+                    <AccordionTrigger className="cursor-pointer hover:no-underline">
                       <span className="font-medium">Ver todos os serviços de engenharia</span>
                     </AccordionTrigger>
                     <AccordionContent>
@@ -165,7 +165,7 @@ export default function ServicosPage() {
             </div>
             <div className="relative aspect-[4/3] overflow-hidden rounded-xl lg:sticky lg:top-24 lg:order-1">
               <Image
-                src="/images/firefighters.png"
+                src="/images/worker-notes.jpeg"
                 alt="Equipe de segurança"
                 fill
                 className="object-cover"
@@ -181,7 +181,7 @@ export default function ServicosPage() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
               <Image
-                src="/images/worker-landscape.jpg"
+                src="/images/ambulance.png"
                 alt="Ambulância"
                 fill
                 className="object-cover"
@@ -209,9 +209,9 @@ export default function ServicosPage() {
                 href="https://api.whatsapp.com/send?phone=5531997679401"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-8 inline-block"
+                className="cursor-pointer mt-8 inline-block"
               >
-                <Button className="bg-accent hover:bg-accent/90">
+                <Button className="cursor-pointer bg-accent hover:bg-accent/90">
                   Solicitar Orçamento
                 </Button>
               </a>
@@ -234,13 +234,14 @@ export default function ServicosPage() {
               href="https://api.whatsapp.com/send?phone=5531997679401"
               target="_blank"
               rel="noopener noreferrer"
+              className="cursor-pointer"
             >
-              <Button size="lg" variant="secondary">
+              <Button size="lg" variant="secondary" className="cursor-pointer">
                 Fale pelo WhatsApp
               </Button>
             </a>
-            <Link href="/contato">
-              <Button size="lg" variant="outline" className="border-white bg-white/10 text-white hover:bg-white/20">
+            <Link href="/contato" className="cursor-pointer">
+              <Button size="lg" variant="outline" className="cursor-pointer border-white bg-white/10 text-white hover:bg-white/20">
                 Ver Contatos
               </Button>
             </Link>

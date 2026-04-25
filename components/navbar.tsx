@@ -43,7 +43,7 @@ export function Navbar() {
             className="h-10 w-10 lg:h-12 lg:w-12"
             priority
           />
-          <span className="hidden text-xl font-bold text-primary sm:inline-block">
+          <span className="hidden text-xl font-bold text-red-700 sm:inline-block">
             PROJETARMED
           </span>
         </Link>
@@ -54,7 +54,7 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+              className="cursor-pointer px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
             >
               {link.label}
             </Link>
@@ -63,7 +63,7 @@ export function Navbar() {
             href="https://sistema.soc.com.br/WebSoc/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+            className="cursor-pointer flex items-center gap-1 px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
           >
             Exames
             <ExternalLink className="h-3 w-3" />
@@ -79,7 +79,7 @@ export function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={social.label}
-              className="flex h-9 w-9 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-secondary hover:text-primary"
+              className="cursor-pointer flex h-9 w-9 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-secondary hover:text-primary"
             >
               <social.icon className="h-5 w-5" />
             </a>
@@ -96,16 +96,27 @@ export function Navbar() {
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
-        <Button
-          variant="ghost"
-          size="icon"
-          className="lg:hidden"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
-        >
-          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </Button>
+        {/* Mobile Exames Button and Menu Button */}
+        <div className="flex items-center gap-2 lg:hidden">
+          <a
+            href="https://sistema.soc.com.br/WebSoc/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cursor-pointer flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+          >
+            Exames
+            <ExternalLink className="h-4 w-4" />
+          </a>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
+            className="cursor-pointer"
+          >
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </Button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -121,20 +132,11 @@ export function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="py-3 text-base font-medium text-foreground transition-colors hover:text-primary"
+              className="cursor-pointer py-3 text-base font-medium text-foreground transition-colors hover:text-primary"
             >
               {link.label}
             </Link>
           ))}
-          <a
-            href="https://sistema.soc.com.br/WebSoc/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1 py-3 text-base font-medium text-foreground transition-colors hover:text-primary"
-          >
-            Exames
-            <ExternalLink className="h-4 w-4" />
-          </a>
           <div className="mt-4 flex items-center gap-3 border-t border-border pt-4">
             {socialLinks.map((social) => (
               <a
@@ -143,7 +145,7 @@ export function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.label}
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-muted-foreground transition-colors hover:text-primary"
+                className="cursor-pointer flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-muted-foreground transition-colors hover:text-primary"
               >
                 <social.icon className="h-5 w-5" />
               </a>
@@ -152,9 +154,9 @@ export function Navbar() {
               href="https://api.whatsapp.com/send?phone=5531997679401"
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-auto"
+              className="cursor-pointer ml-auto"
             >
-              <Button className="bg-accent hover:bg-accent/90">
+              <Button className="cursor-pointer bg-accent hover:bg-accent/90">
                 WhatsApp
               </Button>
             </a>
