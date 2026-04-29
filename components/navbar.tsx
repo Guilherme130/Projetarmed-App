@@ -38,9 +38,9 @@ export function Navbar() {
           <Image
             src="/images/Logotipo_vetor_Projetarmed_saude_page-0001_page-0001.png"
             alt="Projetarmed"
-            width={140}
-            height={50}
-            className="h-12 w-auto lg:h-14 lg:w-auto"
+            width={160}
+            height={60}
+            className="h-14 w-auto lg:h-16 lg:w-auto"
             priority
           />
         </Link>
