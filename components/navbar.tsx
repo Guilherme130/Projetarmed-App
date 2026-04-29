@@ -36,16 +36,13 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/images/projetarmed-logo.png"
+            src="/images/Logotipo_vetor_Projetarmed_saude_page-0001_page-0001.png"
             alt="Projetarmed"
-            width={48}
-            height={48}
-            className="h-10 w-10 lg:h-12 lg:w-12"
+            width={160}
+            height={60}
+            className="h-14 w-auto lg:h-16 lg:w-auto"
             priority
           />
-          <span className="hidden text-xl font-bold text-red-700 sm:inline-block">
-            PROJETARMED
-          </span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -65,7 +62,7 @@ export function Navbar() {
             rel="noopener noreferrer"
             className="cursor-pointer flex items-center gap-1 px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
           >
-            Exames
+            SOCNET
             <ExternalLink className="h-3 w-3" />
           </a>
         </nav>
@@ -85,7 +82,7 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="https://api.whatsapp.com/send?phone=5531997679401"
+            href="https://api.whatsapp.com/send?phone=5531988189401"
             target="_blank"
             rel="noopener noreferrer"
             className="cursor-pointer"
@@ -151,7 +148,7 @@ export function Navbar() {
               </a>
             ))}
             <a
-              href="https://api.whatsapp.com/send?phone=5531997679401"
+              href="https://api.whatsapp.com/send?phone=5531988189401"
               target="_blank"
               rel="noopener noreferrer"
               className="cursor-pointer ml-auto"

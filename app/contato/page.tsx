@@ -18,11 +18,12 @@ const contactInfo = {
   },
   hours: 'Segunda à Sexta - 7:00 às 17:00',
   phones: [
+    { number: '(31) 9 8818-9401', type: 'WhatsApp' },
     { number: '(31) 9 9767-9401', type: 'WhatsApp' },
     { number: '(31) 3594-8278', type: 'Telefone' },
     { number: '(31) 3665-5002', type: 'Telefone' },
   ],
-  email: 'projetar@projetarmed.com.br',
+  email: 'comercial@grupoprojetarmed.com.br',
 }
 
 export default function ContatoPage() {
@@ -158,7 +159,7 @@ export default function ContatoPage() {
             Envie uma mensagem agora mesmo e nossa equipe responderá o mais rápido possível.
           </p>
           <a
-            href="https://api.whatsapp.com/send?phone=5531997679401"
+            href="https://api.whatsapp.com/send?phone=5531988189401"
             target="_blank"
             rel="noopener noreferrer"
             className="cursor-pointer mt-8 inline-block"

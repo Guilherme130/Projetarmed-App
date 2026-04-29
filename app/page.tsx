@@ -340,7 +340,7 @@ export default function HomePage() {
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
-              href="https://api.whatsapp.com/send?phone=5531997679401"
+              href="https://api.whatsapp.com/send?phone=5531988189401"
               target="_blank"
               rel="noopener noreferrer"
               className="cursor-pointer"
