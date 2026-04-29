@@ -6,8 +6,8 @@ const contactInfo = {
   address: 'Rua Emereciana Pedro da Silva, 210, Jardim Teresópolis - Betim/MG, 32681-350',
   mapsUrl: 'https://maps.app.goo.gl/KM122xS4uGU2gqyz5',
   hours: 'Segunda à Sexta – 7:00 às 17:00',
-  phones: ['(31) 9 9767-9401', '(31) 3594-8278', '(31) 3665-5002'],
-  email: 'projetar@projetarmed.com.br',
+  phones: ['(31) 9 8818-9401', '(31) 9 9767-9401', '(31) 3594-8278', '(31) 3665-5002'],
+  email: 'comercial@grupoprojetarmed.com.br',
 }
 
 const quickLinks = [
