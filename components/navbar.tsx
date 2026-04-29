@@ -36,16 +36,13 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/images/projetarmed-logo.png"
+            src="/images/Logotipo_vetor_Projetarmed_saude_page-0001_page-0001.png"
             alt="Projetarmed"
-            width={48}
-            height={48}
-            className="h-10 w-10 lg:h-12 lg:w-12"
+            width={140}
+            height={50}
+            className="h-12 w-auto lg:h-14 lg:w-auto"
             priority
           />
-          <span className="hidden text-xl font-bold text-red-700 sm:inline-block">
-            PROJETARMED
-          </span>
         </Link>
 
         {/* Desktop Navigation */}
