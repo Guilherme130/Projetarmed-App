@@ -62,7 +62,7 @@ export function Navbar() {
             rel="noopener noreferrer"
             className="cursor-pointer flex items-center gap-1 px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
           >
-            Exames
+            SOCNET
             <ExternalLink className="h-3 w-3" />
           </a>
         </nav>
@@ -82,7 +82,7 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="https://api.whatsapp.com/send?phone=5531997679401"
+            href="https://api.whatsapp.com/send?phone=5531988189401"
             target="_blank"
             rel="noopener noreferrer"
             className="cursor-pointer"
@@ -148,7 +148,7 @@ export function Navbar() {
               </a>
             ))}
             <a
-              href="https://api.whatsapp.com/send?phone=5531997679401"
+              href="https://api.whatsapp.com/send?phone=5531988189401"
               target="_blank"
               rel="noopener noreferrer"
               className="cursor-pointer ml-auto"
