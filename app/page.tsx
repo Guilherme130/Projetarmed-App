@@ -73,7 +73,7 @@ const specialties = [
     icon: HardHat,
     title: 'Engenharia de Segurança',
     details: [
-      'PPRA - Programa de Prevenção de Risco Ambientais',
+      'PGR - Programa de Gerenciamento de Riscos',
       'CIPA - Comissão Interna de Prevenção de Acidentes - Implantação e Treinamento',
       'EPI - Catálogo de EPI, elaboração, Treinamento e implantação',
       'PPP - Perfil Profissiográfico Previdenciário',
@@ -84,17 +84,6 @@ const specialties = [
       'PCMAT',
       'LTCAT',
       'Avaliações ambientais (Ruído, vibração, temperatura e etc.)',
-    ],
-  },
-  {
-    icon: Ambulance,
-    title: 'Veículo disponível para locação',
-    details: [
-      'Ambulância Tipo A (simples remoção)',
-      'Ambulância Tipo B (Unidade de Suporte Básico)',
-      'Viatura Tipo C (Unidade de Resgate e Salvamento)',
-      'Ambulância Tipo D (Unidade de Suporte Avançado)',
-      'Dimensionamos e montamos o serviço conforme as especificações do cliente',
     ],
   },
   {
@@ -177,9 +166,17 @@ export default function HomePage() {
         />
         <div className="absolute inset-0 bg-primary/70" />
         <div className="relative z-10 container mx-auto px-4 text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-            PROJETARMED
-          </h1>
+          <div className="flex justify-center mb-6">
+            <Image
+              src="/images/Logotipo_vetor_Projetarmed_saude_page-0001_page-0001.png"
+              alt="Projetarmed"
+              width={500}
+              height={180}
+              className="h-auto w-64 sm:w-80 md:w-96 lg:w-[480px] brightness-0 invert"
+              priority
+            />
+          </div>
+          <h1 className="sr-only">PROJETARMED</h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90 sm:text-xl md:text-2xl">
             Seu Colaborador Merece Ter Tratamento de Qualidade
           </p>

@@ -3,9 +3,10 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Menu, X, Instagram, Facebook, ExternalLink } from 'lucide-react'
+import { Menu, X, Instagram, Facebook, ExternalLink, Headphones } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { OuvidoriaModal } from './ouvidoria-modal'
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -29,9 +30,10 @@ const socialLinks = [
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isOuvidoriaOpen, setIsOuvidoriaOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/70">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
@@ -69,6 +71,14 @@ export function Navbar() {
 
         {/* Desktop Social Links */}
         <div className="hidden items-center gap-2 lg:flex">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => setIsOuvidoriaOpen(true)}
+            className="mr-2 cursor-pointer border-muted-foreground/20 text-muted-foreground hover:text-primary hover:border-primary"
+          >
+            Ouvidoria
+          </Button>
           {socialLinks.map((social) => (
             <a
               key={social.href}
@@ -101,7 +111,7 @@ export function Navbar() {
             rel="noopener noreferrer"
             className="cursor-pointer flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
           >
-            Exames
+            SOCNET
             <ExternalLink className="h-4 w-4" />
           </a>
           <Button
@@ -134,6 +144,15 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
+          <button
+            onClick={() => {
+              setIsOpen(false)
+              setIsOuvidoriaOpen(true)
+            }}
+            className="cursor-pointer py-3 text-left text-base font-medium text-foreground transition-colors hover:text-primary"
+          >
+            Ouvidoria
+          </button>
           <div className="mt-4 flex items-center gap-3 border-t border-border pt-4">
             {socialLinks.map((social) => (
               <a
@@ -160,6 +179,7 @@ export function Navbar() {
           </div>
         </nav>
       </div>
+      <OuvidoriaModal open={isOuvidoriaOpen} onOpenChange={setIsOuvidoriaOpen} />
     </header>
   )
 }

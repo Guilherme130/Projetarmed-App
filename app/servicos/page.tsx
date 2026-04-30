@@ -8,17 +8,17 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
-import { Syringe, HardHat, Ambulance } from 'lucide-react'
+import { Syringe, HardHat } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Serviços',
-  description: 'Conheça os serviços da Projetarmed em medicina do trabalho, engenharia de segurança e locação de veículos.',
+  description: 'Conheça os serviços da Projetarmed em medicina do trabalho e engenharia de segurança.',
 }
 
 const medicineServices = {
   icon: Syringe,
   title: 'Medicina do Trabalho',
-  description: 'Atendimento rápido e eficiente a demandas de mobilização e segmento da saúde do trabalho, com realização de exames clínicos e complementares em nossa clínica ou na sua empresa.',
+  description: 'Atendimento rápido e eficiente a demandas de mobilização e segmento da saúde do trabalho, com realização de exames clínicos e complementares em nossa clínica ou na sua empresa',
   details: [
     'PCMSO - Programa de Controle Médico e Saúde Ocupacional',
     'EEG - Eletroencefalograma',
@@ -37,7 +37,7 @@ const engineeringServices = {
   title: 'Engenharia de Segurança',
   description: 'Infraestrutura completa e profissionais habilitados com grande experiência em engenharia e segurança do trabalho, de forma a atender plenamente as necessidades da sua empresa.',
   details: [
-    'PPRA - Programa de Prevenção de Riscos Ambientais',
+    'PGR - Programa de Gerenciamento de Riscos',
     'CIPA - Comissão Interna de Prevenção de Acidentes - Implantação e Treinamento',
     'EPI - Catálogo de EPI, elaboração, Treinamento e implantação',
     'PPP - Perfil Profissiográfico Previdenciário',
@@ -48,18 +48,6 @@ const engineeringServices = {
     'PCMAT',
     'LTCAT',
     'Avaliações ambientais (Ruído, vibração, temperatura e etc.)',
-  ],
-}
-
-const vehicleServices = {
-  icon: Ambulance,
-  title: 'Veículos disponíveis para locação',
-  vehicles: [
-    'Ambulância Tipo A (simples remoção)',
-    'Ambulância Tipo B (Unidade de Suporte Básico)',
-    'Viatura Tipo C (Unidade de Resgate e Salvamento)',
-    'Ambulância Tipo D (Unidade de Suporte Avançado)',
-    'Dimensionamos e montamos o serviço conforme as especificações do cliente',
   ],
 }
 
@@ -170,51 +158,6 @@ export default function ServicosPage() {
                 fill
                 className="object-cover"
               />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Veículos Section */}
-      <section className="py-16 lg:py-24" id="veiculos">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-              <Image
-                src="/images/ambulance.png"
-                alt="Ambulância"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div>
-              <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent">
-                  <vehicleServices.icon className="h-6 w-6" />
-                </div>
-                <h2 className="text-3xl font-bold text-foreground">{vehicleServices.title}</h2>
-              </div>
-              <ul className="mt-8 space-y-3">
-                {vehicleServices.vehicles.map((vehicle, index) => (
-                  <li
-                    key={index}
-                    className="flex items-start gap-3 text-muted-foreground"
-                  >
-                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-accent" />
-                    {vehicle}
-                  </li>
-                ))}
-              </ul>
-              <a
-                href="https://api.whatsapp.com/send?phone=5531988189401"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cursor-pointer mt-8 inline-block"
-              >
-                <Button className="cursor-pointer bg-accent hover:bg-accent/90">
-                  Solicitar Orçamento
-                </Button>
-              </a>
             </div>
           </div>
         </div>
