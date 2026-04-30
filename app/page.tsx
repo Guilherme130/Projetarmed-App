@@ -73,7 +73,7 @@ const specialties = [
     icon: HardHat,
     title: 'Engenharia de Segurança',
     details: [
-      'PPRA - Programa de Prevenção de Risco Ambientais',
+      'PGR - Programa de Gerenciamento de Riscos',
       'CIPA - Comissão Interna de Prevenção de Acidentes - Implantação e Treinamento',
       'EPI - Catálogo de EPI, elaboração, Treinamento e implantação',
       'PPP - Perfil Profissiográfico Previdenciário',
@@ -84,17 +84,6 @@ const specialties = [
       'PCMAT',
       'LTCAT',
       'Avaliações ambientais (Ruído, vibração, temperatura e etc.)',
-    ],
-  },
-  {
-    icon: Ambulance,
-    title: 'Veículo disponível para locação',
-    details: [
-      'Ambulância Tipo A (simples remoção)',
-      'Ambulância Tipo B (Unidade de Suporte Básico)',
-      'Viatura Tipo C (Unidade de Resgate e Salvamento)',
-      'Ambulância Tipo D (Unidade de Suporte Avançado)',
-      'Dimensionamos e montamos o serviço conforme as especificações do cliente',
     ],
   },
   {

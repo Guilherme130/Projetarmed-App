@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 const medicineServices = {
   icon: Syringe,
   title: 'Medicina do Trabalho',
-  description: 'Atendimento rápido e eficiente a demandas de mobilização e segmento da saúde do trabalho, com realização de exames clínicos e complementares em nossa clínica ou na sua empr[...]
+  description: 'Atendimento rápido e eficiente a demandas de mobilização e segmento da saúde do trabalho, com realização de exames clínicos e complementares em nossa clínica ou na sua empresa',
   details: [
     'PCMSO - Programa de Controle Médico e Saúde Ocupacional',
     'EEG - Eletroencefalograma',
@@ -37,7 +37,7 @@ const engineeringServices = {
   title: 'Engenharia de Segurança',
   description: 'Infraestrutura completa e profissionais habilitados com grande experiência em engenharia e segurança do trabalho, de forma a atender plenamente as necessidades da sua empresa.',
   details: [
-    'PPRA - Programa de Prevenção de Riscos Ambientais',
+    'PGR - Programa de Gerenciamento de Riscos',
     'CIPA - Comissão Interna de Prevenção de Acidentes - Implantação e Treinamento',
     'EPI - Catálogo de EPI, elaboração, Treinamento e implantação',
     'PPP - Perfil Profissiográfico Previdenciário',

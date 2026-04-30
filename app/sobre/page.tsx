@@ -4,9 +4,11 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { CheckCircle } from 'lucide-react'
 
+const yearsExperience = new Date().getFullYear() - 2009;
+
 export const metadata: Metadata = {
   title: 'Sobre Nós',
-  description: 'Conheça a Projetarmed - mais de 15 anos de experiência em medicina e segurança do trabalho.',
+  description: `Conheça a Projetarmed - mais de ${yearsExperience} anos de experiência em medicina e segurança do trabalho.`,
 }
 
 const values = [
@@ -40,7 +42,7 @@ export default function SobrePage() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
               <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Quem Somos</h2>
-              <p className="mt-2 text-lg text-accent">Com mais de 15 anos no mercado</p>
+              <p className="mt-2 text-lg text-accent">Com mais de {yearsExperience} anos no mercado</p>
               <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
                 <p>
                   A Projetarmed se destaca por sua expertise em tecnologias inovadoras, o que a torna 
