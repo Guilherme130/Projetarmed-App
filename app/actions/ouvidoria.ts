@@ -7,18 +7,21 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 const schema = z.object({
   identify: z.boolean(),
-  name: z.string().optional(),
-  email: z.string().email('E-mail inválido').optional(),
-  phone: z.string().optional(),
+  name: z.string().optional().or(z.literal('')),
+  email: z.string().optional().or(z.literal('')),
+  phone: z.string().optional().or(z.literal('')),
   message: z.string().min(1, 'A mensagem é obrigatória'),
 }).refine((data) => {
   if (data.identify) {
-    return !!data.name && !!data.email && !!data.phone;
+    // Se identificar for true, os campos devem ter conteúdo
+    return !!data.name && data.name.length > 0 && 
+           !!data.email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email) && 
+           !!data.phone && data.phone.length > 0;
   }
   return true;
 }, {
-  message: "Nome, e-mail e telefone são obrigatórios para identificação",
-  path: ["name"], // This is a bit simplified for the refine
+  message: "Dados de identificação incompletos ou inválidos",
+  path: ["identify"],
 });
 
 export async function sendOuvidoriaEmail(formData: z.infer<typeof schema>) {
