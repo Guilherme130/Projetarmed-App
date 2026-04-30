@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { MapPin, Clock, Phone, Mail, Instagram, Facebook } from 'lucide-react'
+import { MapPin, Clock, Phone, Mail, Instagram, Facebook, ExternalLink } from 'lucide-react'
 
 const contactInfo = {
   address: 'Rua Emereciana Pedro da Silva, 210, Jardim Teresópolis - Betim/MG, 32681-350',
@@ -15,7 +15,7 @@ const quickLinks = [
   { href: '/sobre', label: 'Sobre Nós' },
   { href: '/servicos', label: 'Serviços' },
   { href: '/contato', label: 'Contato' },
-  { href: 'https://sistema.soc.com.br/WebSoc/', label: 'Exames', external: true },
+  { href: 'https://sistema.soc.com.br/WebSoc/', label: 'SOCNET', external: true },
 ]
 
 const groupCompanies = [
@@ -103,6 +103,7 @@ export function Footer() {
                     className="text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground"
                   >
                     {link.label}
+                    
                   </a>
                 ) : (
                   <Link
