@@ -52,7 +52,7 @@ export async function sendOuvidoriaEmail(formData: z.infer<typeof schema>) {
 
     await resend.emails.send({
       from: 'Ouvidoria Site Projetarmed <onboarding@resend.dev>',
-      to: 'guilherme130447@gmail.com',
+      to: 'gerencia@grupoprojetarmed.com.br',
       replyTo: identify ? email : undefined,
       subject: `Ouvidoria [Site]: ${identify ? name : 'Relato Anônimo'}`,
       html: htmlContent,
